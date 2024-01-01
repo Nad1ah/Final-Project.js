@@ -1,48 +1,42 @@
-function createPostElement(post) {
-  // ...
+async function fetchData(url: string): Promise<any> {
+  const response = await fetch(url);
+  return await response.json();
 }
 
-function createCommentElement(comment) {
-  // ...
-}
+const usersUrl =
+  "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json";
+const postsUrl =
+  "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json";
 
-// Funções para comunicação com o servidor
-async function fetchPosts() {
-  // ...
-}
+const users = await fetchData(usersUrl);
+const posts = await fetchData(postsUrl);
 
-async function fetchComments(postId) {
-  // ...
+function createPostElement(post: any): HTMLElement {
+  return article;
 }
-
-// Funções para lidar com ações do usuário
-function handleSearch() {
-  // ...
-}
-
-function handlePostSubmit(event) {
-  // ...
-}
-
-// Manipulações do DOM para exibir os posts e comentários
 const feed = document.getElementById("feed");
-const searchButton = document.getElementById("searchButton");
 
+posts.forEach((post) => {
+  const postElement = createPostElement(post);
+  feed.appendChild(postElement);
+
+  post.comments.forEach((comment) => {
+    const commentElement = commentElement(comment);
+    postElement.appendChild(commentElement);
+  });
+});
+function handleSearch(event: Event): void {
+  // ...
+}
+function handlePostSubmit(event: Event): void {
+  // ...
+}
+// Add event listeners to the search box and submit button
+const searchButton = document.getElementById("searchButton");
+searchButton?.addEventListener;
 searchButton.addEventListener("click", handleSearch);
 document
   .getElementById("postForm")
+
   .addEventListener("submit", handlePostSubmit);
-
-fetchPosts().then((posts) => {
-  posts.forEach((post) => {
-    const postElement = createPostElement(post);
-    feed.appendChild(postElement);
-
-    fetchComments(post.id).then((comments) => {
-      comments.forEach((comment) => {
-        const commentElement = createCommentElement(comment);
-        postElement.appendChild(commentElement);
-      });
-    });
-  });
-});
+export {};
