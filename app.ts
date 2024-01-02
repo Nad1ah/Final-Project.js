@@ -1,42 +1,38 @@
-async function fetchData(url: string): Promise<any> {
-  const response = await fetch(url);
-  return await response.json();
-}
+// import { User, Post, Comment } from ""
+// async function getUsers(): Promise<User[]> {
+//   const response = await fetch(
+//     "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json"
+//   );
+//   return response.json();
+// }
 
-const usersUrl =
-  "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json";
-const postsUrl =
-  "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json";
+// async function getPosts(): Promise<Post[]> {
+//   const response = await fetch(
+//     "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json"
+//   );
+//   return response.json();
+// }
 
-const users = await fetchData(usersUrl);
-const posts = await fetchData(postsUrl);
+// async function getUserById(id: number): Promise<User> {
+//   const users = await getUsers();
+//   return users.find((user) => user.id === id);
+// }
 
-function createPostElement(post: any): HTMLElement {
-  return article;
-}
-const feed = document.getElementById("feed");
+// async function filterPostsByTitle(title: string): Promise<Post[]> {
+//   const posts = await getPosts();
+//   return posts.filter((post) => post.title.includes(title));
+// }
 
-posts.forEach((post) => {
-  const postElement = createPostElement(post);
-  feed.appendChild(postElement);
+// function createPost(title: string, body: string): Post {
+//   const post: Post = {
+//     id: Math.floor(Math.random() * 1000000000), // gerar um ID aleatório
+//     title: title,
+//     body: body,
+//     userId: 1, // supondo que todos os posts são criados pelo mesmo utilizador
+//     comments: [],
+//     likes: [],
+//     createdAt: new Date(),
+//   };
 
-  post.comments.forEach((comment) => {
-    const commentElement = commentElement(comment);
-    postElement.appendChild(commentElement);
-  });
-});
-function handleSearch(event: Event): void {
-  // ...
-}
-function handlePostSubmit(event: Event): void {
-  // ...
-}
-// Add event listeners to the search box and submit button
-const searchButton = document.getElementById("searchButton");
-searchButton?.addEventListener;
-searchButton.addEventListener("click", handleSearch);
-document
-  .getElementById("postForm")
-
-  .addEventListener("submit", handlePostSubmit);
-export {};
+//   return post;
+// }
