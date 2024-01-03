@@ -1,9 +1,13 @@
-/* const searchInput = document.querySelector("#searchInput");
+
+document.addEventListener('DOMContentLoaded', function() {
+
+const searchInput = document.querySelector("#searchInput");
 const resultsContainer = document.querySelector(".results");
 let pageNumber = 1;
 const divContent = document.querySelector("#feed");
-const timeData = document.querySelector("#time-date");
+const timeData = document.querySelector("time-date")
 const postComment = document.querySelector("#postForm");
+
 
 const usersData = fetch(
   "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json"
@@ -11,16 +15,58 @@ const usersData = fetch(
 const postsData = fetch(
   "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json"
 );
- */
-// Remova as linhas abaixo e substitua pelo seu código para obter os dados do usuário e do post
+
+function postsData {[]
+  [
+    {
+      title: 'Diário de Férias',
+      body: 'Este verão estive de férias no Algarve e diverti-me imenso. Visitámos a praia e o campo.',
+      createdAt: '2023-12-15T21:13:11.905Z',
+      likes: [14254, 24356, 46577],
+      comments: [
+        {
+          userId: 14254,
+          body: 'Bom contéudo lol',
+          createdAt: '2023-12-15T21:13:11.905Z',
+        },
+        {
+          userId: 24356,
+          body: 'Para a próxima tens de ir às dunas',
+          createdAt: '2023-12-15T21:13:11.905Z',
+        },
+      ],
+    },
+  
+  ]
+}
+ function usersData {
+  [
+    {
+      id: 14254,
+      name: 'João',
+      picture : 'https://placehold.co/400?text=J',
+    },
+    ]
+ }
+ 
+ const clock = new Date("");
+ document.getElementById("timeData").innerHTML = clock;
+
+ 
+});
+
+
+
+
+
 // const usersData = fetch(
 //   "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json"
 // );
 // const postsData = fetch(
 //   "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json"
-// );
+// ); */
 
-document.addEventListener("DOMContentLoaded", fetchDataAndDisplayPosts);
+/* document.addEventListener("DOMContentLoaded", fetchDataAndDisplayPosts);
 async function getUserPosts(userId) {
   const response = await fetch(
     `https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json`
@@ -98,7 +144,7 @@ function searchPosts() {
 
   const results = document.getElementById("results");
   results.innerText = `Results: ${numPostsFound}`;
-}
+} */
 
 /* import "./app";
 function searchPosts() {

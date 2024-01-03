@@ -10,8 +10,8 @@
   <body>
     <h1 id="title">Final Project</h1>
 
-    <input type="text" id="searchInput" placeholder="search..." />
-    <button id="searchButton1">Search</button>
+    <input type="search" id="searchInput" placeholder="search..." />
+    <button type="button" id="searchButton1" onclick="click()">Search</button>
     <span id="results"></span>
 
     <div id="feed">
@@ -36,13 +36,15 @@
     </div>
     <div id="time-date">
       <fieldset></fieldset>
-
-      <p><strong>Posted on: </strong> January 15th, 2023 at 9:45</p>
+      <p id="likes">6 Likes</p>
+      <p id="time-date">15/12/2023 - 17:45</p>
     </div>
 
     <fieldset></fieldset>
     <div id=""></div>
+
     <form id="postForm">
+      <legend>🖊️ Criar um novo post</legend>
       <textarea id="postText" placeholder="Write Something..."></textarea>
       <button type="submit">Submit</button>
     </form>
