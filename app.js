@@ -1,22 +1,21 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.querySelector("#searchInput");
+  const resultsContainer = document.querySelector(".results");
+  let pageNumber = 1;
+  const divContent = document.querySelector("#feed");
+  const timeData = document.querySelector("time-date");
+  const postComment = document.querySelector("#postForm");
+  const results = document.getElementById("#results");
+  results.textContent = `${numPostsFound} post(s) encontrado(s)`;
 
-document.addEventListener('DOMContentLoaded', function() {
+  const usersData = fetch(
+    "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json"
+  );
+  const postsData = fetch(
+    "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json"
+  );
 
-const searchInput = document.querySelector("#searchInput");
-const resultsContainer = document.querySelector(".results");
-let pageNumber = 1;
-const divContent = document.querySelector("#feed");
-const timeData = document.querySelector("time-date")
-const postComment = document.querySelector("#postForm");
-
-
-const usersData = fetch(
-  "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json"
-);
-const postsData = fetch(
-  "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json"
-);
-
-function postsData {[]
+  /* function postsData {
   [
     {
       title: 'Diário de Férias',
@@ -48,16 +47,10 @@ function postsData {[]
     },
     ]
  }
- 
- const clock = new Date("");
- document.getElementById("timeData").innerHTML = clock;
-
- 
+  */
+  const clock = new Date("");
+  document.getElementById("timeData").innerHTML = clock;
 });
-
-
-
-
 
 // const usersData = fetch(
 //   "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json"
