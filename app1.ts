@@ -1,19 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
+
   const searchInput = document.querySelector("#searchInput");
   const resultsContainer = document.querySelector(".results");
-  let pageNumber = 1;
   const divContent = document.querySelector("#feed");
   const timeData = document.querySelector("time-date");
   const postComment = document.querySelector("#postForm");
   const results = document.getElementById("#results");
-  results.textContent = `${numPostsFound} post(s) encontrado(s)`;
+  
 
-  const usersData = fetch(
-    "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json"
-  );
-  const postsData = fetch(
-    "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json"
-  );
+  async function getUserPosts(userId) {
+    const response = await fetch(
+      `https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json`
+    );
+  
+    if (!response.ok) {
+      throw new Error("Error fetching user posts");
+    }
+  
+    const postsData = await response.json();
+    return postsData;
+  }
 
   /* function postsData {
   [
@@ -47,11 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     ]
  }
-  */
+ 
   const clock = new Date("");
   document.getElementById("timeData").innerHTML = clock;
-});
 
+ */
 // const usersData = fetch(
 //   "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json"
 // );
