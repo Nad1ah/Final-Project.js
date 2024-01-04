@@ -62,7 +62,7 @@ fieldset {
 }
 #btn-submit {
   padding: 5px 10px;
-  text-align: right;
+  text-align: center;
   display: flex;
 }
 #likes {
